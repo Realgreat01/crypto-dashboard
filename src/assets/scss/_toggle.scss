@@ -1,0 +1,38 @@
+.my-toggle {
+  $width: 30px;
+  $height: $width/2;
+  $border: $height/2;
+  cursor: pointer;
+  display: block;
+  .toggle-input {
+    display: none;
+    &:checked ~ .toggle-fill {
+      background: rgba(2, 116, 78, 0.705);
+      &::after {
+        transform: translateX($height);
+        background: rgb(255, 255, 255);
+      }
+    }
+  }
+
+  .toggle-fill {
+    position: relative;
+    width: $width;
+    height: $height;
+    border-radius: $border;
+    background: red;
+    transition: background 1s;
+
+    &::after {
+      content: "";
+      position: absolute;
+      height: $height;
+      width: $height;
+      border-radius: $border;
+      top: 0;
+      left: 0;
+      background: rgb(255, 255, 255);
+      box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.27);
+    }
+  }
+}

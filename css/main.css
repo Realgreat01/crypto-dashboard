@@ -1,0 +1,123 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.circle {
+  display: flex;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: conic-gradient(var(--color) var(--progress), #d4d4d4 0deg);
+  font-size: 0;
+  animation: 0.4s ease-out turn_in reverse;
+}
+
+.circle::after {
+  font-family: "Material Icons";
+  -webkit-font-feature-settings: "liga";
+  font-feature-settings: "liga";
+  content: attr(data-progress);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  margin: 5px;
+  border-radius: 50%;
+  background: rgb(233, 233, 233);
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: rgb(187, 187, 187);
+  text-align: center;
+}
+
+@keyframes turn_in {}
+.my-toggle {
+  cursor: pointer;
+  display: block;
+}
+.my-toggle .toggle-input {
+  display: none;
+}
+.my-toggle .toggle-input:checked ~ .toggle-fill {
+  background: rgba(2, 116, 78, 0.705);
+}
+.my-toggle .toggle-input:checked ~ .toggle-fill::after {
+  transform: translateX(15px);
+  background: rgb(255, 255, 255);
+}
+.my-toggle .toggle-fill {
+  position: relative;
+  width: 30px;
+  height: 15px;
+  border-radius: 7.5px;
+  background: red;
+  transition: background 1s;
+}
+.my-toggle .toggle-fill::after {
+  content: "";
+  position: absolute;
+  height: 15px;
+  width: 15px;
+  border-radius: 7.5px;
+  top: 0;
+  left: 0;
+  background: rgb(255, 255, 255);
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.27);
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  display: flex;
+  z-index: 100;
+  height: 100vh;
+  width: 10%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: red;
+}
+.sidebar img, .sidebar svg {
+  height: 40px;
+  width: 40px;
+  display: block;
+}
+@media (max-width: 900px) {
+  .sidebar {
+    top: 92%;
+    -moz-height: fit-content;
+    height: fit-content;
+    width: 100%;
+    width: 100%;
+    flex-direction: row;
+  }
+}
+
+.main-section {
+  grid-template-columns: 1fr 4fr;
+}
+@media (max-width: 900px) {
+  .main-section {
+    grid-template-columns: 1fr;
+  }
+}
+
+.mining-section {
+  grid-template-columns: 1fr 1fr;
+}
+@media (max-width: 900px) {
+  .mining-section {
+    grid-template-columns: 1fr;
+  }
+}
+
+.activity-section {
+  grid-template-columns: 1fr 2fr 1fr;
+}
+@media (max-width: 900px) {
+  .activity-section {
+    grid-template-columns: 1fr;
+  }
+}
