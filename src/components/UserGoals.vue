@@ -1,7 +1,7 @@
 <template>
-  <div class="grid grid-cols-2 justify-between bg-[purple]">
-    <section>
-      <div v-for="(coin, index) in walletBalance" :key="index">
+  <div class=" grid-cols-2 justify-between pb-[70px] md:pb-0 grid">
+    <section class="flex flex-col h-[300px] justify-between">
+      <div v-for="(coin, index) in walletBalance" :key="index" class="flex space-x-4 ">
         <p
           class="circle block"
           :data-progress="coin.icon"
@@ -9,11 +9,12 @@
             coin.color
           }`"
         ></p>
-        <h1>{{ coin.name }}</h1>
-        <h1>{{ coin.balance }}</h1>
-        <h1>{{ percentage(coin.balance) }} %</h1>
+        <div class="">
+          <h1 class="capitalize font-bold text-xs">{{ coin.name }}</h1>
+          <h1>{{ coin.balance }}</h1>
+        </div>
       </div>
-      <h1>Goals <span class="block">Week 2</span></h1>
+      <h1>Goals <span class="block font-bold">Week 2</span></h1>
     </section>
 
     <section class="flex space-x-4">
@@ -24,8 +25,10 @@
         class="h-[90%] w-[7px] rotate-180 overflow-hidden rounded-xl bg-slate-100"
       >
         <div
-          class="w-[100%] rounded-2xl "
-          :style="`height: ${percentage(coin.balance)}%; background: ${coin.color}`"
+          class="w-[100%] rounded-2xl"
+          :style="`height: ${percentage(coin.balance)}%; background: ${
+            coin.color
+          }`"
         ></div>
       </div>
     </section>

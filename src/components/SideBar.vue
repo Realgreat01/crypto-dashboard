@@ -1,5 +1,7 @@
 <template>
   <div class="sidebar">
+
+    <!-- FIRST ELEMENT -->
     <svg
       class="block justify-self-start md:mb-32 md:h-3 md:w-6"
       viewBox="0 0 42 37"
@@ -13,10 +15,10 @@
       <circle cx="21" cy="23" r="6" fill="#F78EA7" />
     </svg>
 
-    <div class="w-full space-x-6 md:flex md:space-y-6 md:space-x-0">
+    <!-- OTHER IMAGES -->
+    <div class="icons">
       <img
-        class="block h-3 w-6"
-        :class="imageClass"
+        class=""
         :src="getImgUrl(icon)"
         :alt="icon"
         v-for="(icon, index) in icons"
