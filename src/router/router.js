@@ -4,12 +4,12 @@ import LoginPage from "../views/LoginPage.vue";
 
 const routes = [
   {
-    path: "/home",
+    path: "/",
     name: "home",
     component: HomePage,
   },
   {
-    path: "/",
+    path: "/login",
     name: "login",
     component: LoginPage,
     props: true,
