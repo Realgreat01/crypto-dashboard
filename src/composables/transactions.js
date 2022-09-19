@@ -4,14 +4,14 @@ console.log(currentBalance);
 
 const amount = ref(null);
 const description = ref("");
-let finalBalance = 0;
 const state = reactive({
   transactionActivity: [],
 });
 
 const transaction = (name, style) => (amount, type) => {
   currentBalance.amount += Number(amount)
-  finalBalance = currentBalance.amount;
+  const finalBalance = currentBalance.amount;
+  console.log(currentBalance.amount)
   return state.transactionActivity.push({
     name,
     style,
@@ -34,6 +34,8 @@ const sell = (name, amount) => {
 };
 
 const transfer = (initialCurrency, amount, finalCurrency) => {
+    currentBalance.amount += Number(1);
+    const finalBalance = currentBalance.amount;
   const name = `${initialCurrency} to ${finalCurrency}`;
     return state.transactionActivity.push({
       name,
@@ -41,15 +43,16 @@ const transfer = (initialCurrency, amount, finalCurrency) => {
       amount: amount.toFixed(2),
       change: 0,
       type: "Transferred",
+      finalBalance
     });
   };
 
 
 buy("BTC", 200);
-// buy("BTC", 2000);
-// buy("Ethereum", 200);
-// buy("BTC", 200);
-// sell("BNB", 200);
+buy("BTC", 2000);
+buy("Ethereum", 200);
+buy("BTC", 200);
+sell("BNB", 200);
 sell("BNB", 200);
 buy("Ethereum", 400);
 

@@ -1,9 +1,9 @@
 .circle {
   display: flex;
-  width: 50px;
-  height: 50px;
+  width: 35px;
+  height: 35px;
   border-radius: 50%;
-  background: conic-gradient(var(--color) var(--progress), #d4d4d4 0deg);
+  background: conic-gradient(var(--color) var(--progress), #d8d8d8 0deg);
   font-size: 0;
   animation: 0.4s ease-out turn_in reverse;
 }
@@ -19,13 +19,11 @@
   width: 100%;
   margin: 5px;
   border-radius: 50%;
-  background: rgb(233, 233, 233);
-  font-size: 1.5rem;
+  background: #fdfbfb;
+  font-size: 1rem;
   font-weight: 500;
   color: rgb(187, 187, 187);
   text-align: center;
 }
 
-@keyframes turn_in {
-  
-}
+

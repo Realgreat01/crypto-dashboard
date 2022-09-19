@@ -65,22 +65,22 @@
       <h2 class="mb-2 font-headline font-semibold text-gray-500">
         Currencies Status
       </h2>
-      <div class="grid h-48 grid-cols-2 gap-1">
+      <div class="grid  h-fit grid-cols-2 gap-1">
         <div
-          class="grid h-4/5 rounded p-2"
-          style="grid-template-rows: 1fr 1fr 4fr 1fr"
+          class="grid rounded p-2 h-[200px]"
+          style="grid-template-rows: 1fr 1fr 2fr 1fr"
           :class="index % 2 === 0 ? 'bg-blue-700' : 'bg-red-400'"
           v-for="({ name, amount, price }, index) in currencies"
           :key="index"
         >
           <p class="text-white">{{ name.toUpperCase() }}</p>
           <p
-            class="h-4 self-start font-semibold"
+            class=" self-start font-semibold"
             :class="index % 2 === 0 ? 'text-red-300' : 'text-blue-700'"
           >
             ${{ getEquilvalentInUSD(amount, price) }} USD
           </p>
-          <img src="" alt="" />
+          <img src="" alt="" class="h-4" />
           <p class="font-bold text-white">
             {{ amount }} {{ name.toUpperCase() }}
           </p>

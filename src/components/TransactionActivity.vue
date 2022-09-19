@@ -23,7 +23,7 @@
               >{{ transaction.amount }} {{ transaction.name }}</span
             >
             <span class="block"
-              >$ {{ getFinalBalance(transaction.change) }}</span
+              >$ {{ transaction.finalBalance}}</span
             >
           </div>
         </div>
@@ -36,13 +36,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted, reactive } from "vue";
+import { ref, onMounted, reactive, watch } from "vue";
 import { state, currentBalance } from "@/composables/transactions.js";
 
-const balance = (current) => (change) => {
-  current = current - change;
-  return current.toFixed(2);
-};
-const getFinalBalance = balance(currentBalance.amount);
-onMounted(() => {});
 </script>
