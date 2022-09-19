@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="px-4">
     <h1 class="text-lg font-semibold">Transaction Activity</h1>
     <input
       type="number"
