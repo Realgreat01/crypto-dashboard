@@ -1,8 +1,11 @@
 <template>
-  <div class="">
-    <h1 class="h-[50px]">Mining Status</h1>
+  <div class="pt-4">
+    <!-- HEADING FOR MINING STATUS -->
+    <h1 class=" px-4 h-[50px] mb-2  font-headline font-normal text-gray-800">Mining Status</h1>
 
-    <div class="flex justify-between gap-2 pr-10">
+    <!-- FIRST CONTAINER  -->
+    <div class="flex justify-around gap-1 md:gap-2 md:pr-10">
+      <!-- MAIN MINING BOX -->
       <div class="flex h-[200px] flex-col justify-around space-y-4">
         <div
           class="flex items-center justify-between space-x-3"
@@ -17,7 +20,7 @@
           </p>
 
           <div class="font-semibold">
-            <p>{{ mining.name }}</p>
+            <p class="text-sm">{{ mining.name }}</p>
             <p class="text-xs text-green-500" v-if="mining.running">
               Running...
             </p>
@@ -37,6 +40,7 @@
         </div>
       </div>
 
+      <!-- USER STATUS -->
       <div class="flex h-[200px] flex-col justify-around space-y-4">
         <div
           class="flex justify-start space-x-3"
@@ -50,8 +54,8 @@
           >
 
           <div>
-            <p class="font-semibold">{{ user.name }}</p>
-            <p class="text-xs">
+            <p class="font-semibold text-sm">{{ user.name }}</p>
+            <p class="text-xs font-currency">
               <span v-if="user.isCurrency">${{ user.value }}</span>
               <span v-else>{{ user.value }}</span>
             </p>

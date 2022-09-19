@@ -1,13 +1,13 @@
 <template>
   <NavBar />
   <div
-  class="main-section ml-[10%] grid md:ml-0"
+  class="main-section ml-0 grid w-full md:w-[90%] md:ml-[10%]"
   >
   <!-- style="grid-template-columns: 1fr 4fr" -->
-    <div>
+    <div class="">
       <TodayStats />
     </div>
-    <div class="flex flex-col">
+    <div class="flex flex-col md:ml-6">
       <div class="mining-section mb-4 grid">
         <MiningStats />
         <MyBalances />
