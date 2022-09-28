@@ -8,6 +8,7 @@
       v-for="(stat, index) in stats"
       :key="index"
     >
+
       <div class="">
         <h1 class="font-sans text-[10px] uppercase">{{ stat.name }}</h1>
         <p class="font-currency font-semibold tracking-[2px]">

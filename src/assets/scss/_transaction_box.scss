@@ -1,3 +1,17 @@
 .transaction-box{
-    // background: red;
+    &::-webkit-scrollbar{
+        width: 10px;
+        // display: inline;
+        &-track{
+            background: #e6ffff;
+            overflow: hidden;
+            // margin-block: 0.5em;
+            border-radius: 50px;
+        }
+        &-thumb{
+            background: rgb(0, 130, 87);
+            border-radius: 50px;
+            border: 1px solid #e6ffff;
+        }
+    }
 }

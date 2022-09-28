@@ -1,9 +1,9 @@
 <template>
   <div class="sidebar">
-
     <!-- FIRST ELEMENT -->
     <svg
-      class="block justify-self-start md:mb-32 md:h-3 md:w-6"
+    @click="showModal = !showModal"
+      class="main block justify-self-start md:mb-32 md:h-3 md:w-6"
       viewBox="0 0 42 37"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -16,6 +16,7 @@
     </svg>
 
     <!-- OTHER IMAGES -->
+
     <div class="icons">
       <img
         class=""
@@ -30,6 +31,7 @@
 
 <script setup>
 import { ref } from "vue";
+import showModal from "@/composables/methods"
 
 const icons = ref([
   "dashboard",
