@@ -1,2 +1,3 @@
 import { ref } from "vue";
-export default showModal = ref(false);
+const showModal = ref(false);
+export default showModal;
